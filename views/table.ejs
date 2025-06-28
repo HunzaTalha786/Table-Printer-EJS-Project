@@ -35,7 +35,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Table of <%= number %></title>
+  <title>Printed Table</title>
 
   <!-- Bootstrap CDN -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -46,46 +46,52 @@
   <!-- Animate.css CDN -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 
-  <!-- Bootstrap Icons CDN -->
+  <!-- Icons CDN -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 
   <style>
     body {
       font-family: 'Poppins', sans-serif;
-      background: linear-gradient(135deg, #ACB6E5, #74ebd5);
+      background: linear-gradient(135deg, #74ebd5, #ACB6E5);
       min-height: 100vh;
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 20px;
+      padding: 1rem;
     }
     .card {
       border-radius: 1rem;
       box-shadow: 0 10px 30px rgba(0,0,0,0.2);
       width: 100%;
-      max-width: 600px;
+      max-width: 500px;
+      font-size: 2rem;
+     
     }
+    .btn{
+      font-size: 1.6rem;
+    }
+    
+     
   </style>
 </head>
 <body>
-  <div class="card p-4 animate__animated animate__zoomIn">
-    <h2 class="text-center mb-4">
+  <div class="card p-4 animate__animated animate__fadeIn">
+    <h1 class="text-center mb-4">
       <i class="bi bi-printer-fill"></i> Table of <%= number %>
-    </h2>
+    </h1>
 
-    <!--  Table Responsive Wrapper -->
     <div class="table-responsive">
-      <table class="table table-bordered table-striped table-hover">
-        <thead class="table-dark">
+      <table class="table table-striped table-bordered">
+        <thead>
           <tr>
-            <th>Expression</th>
+            <th>Multiply</th>
             <th>Result</th>
           </tr>
         </thead>
         <tbody>
           <% for(let i = 1; i <= 10; i++) { %>
             <tr>
-              <td><%= number %> × <%= i %></td>
+              <td><%= number %> x <%= i %></td>
               <td><%= number * i %></td>
             </tr>
           <% } %>
@@ -94,7 +100,7 @@
     </div>
 
     <a href="/" class="btn btn-primary w-100 mt-3">
-      <i class="bi bi-arrow-left-circle-fill"></i> Back
+      <i class="bi bi-arrow-left-circle"></i> Back
     </a>
   </div>
 </body>
